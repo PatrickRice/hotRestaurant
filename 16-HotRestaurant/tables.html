@@ -7,6 +7,94 @@
     <title>Hot Tables</title>
 </head>
 <body>
-    <h1>Tables</h1>
+    <!-- <h1>Tables</h1> -->
+
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hot Tables</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Current Table Reservations</h1>
+      <hr>
+      <!-- <a href="/add"><button class="btn btn-danger btn-lg"><span class="fa fa-plus"></span> Add New Character</button></a>
+    </div>
+    <div class="row">
+
+      <div class="col-12">
+
+        <div class="card mb-4">
+          <div class="card-header">
+            <h3><strong>Character Search</strong></h3>
+          </div>
+          <div class="card-body">
+            <input type="text" id="character-search" class="form-control"> -->
+            <br>
+            <div class="text-right">
+              <button type="submit" class="btn btn-primary btn-md" id="search-btn"><span class="fa fa-search"></span> View Current Reservations</button>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3><strong>Reservation List:</strong></h3>
+          </div>
+          <div class="card-body">
+            <h2 id="tableNumber"><u>Table 1</u></h2>
+            <div id="stats">
+              <h3><strong>Name:</strong> <span id="name">Bootcamp Class</span></h3>
+              <h3><strong>Phone:</strong> <span id="phone">555-5555</span></h3>
+              <h3><strong>Email:</strong> <span id="email">bc@example.com</span></h3>
+              <h3><strong>User ID:</strong> <span id="userID">bcstudent1</span></h3>
+              <br><br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    $("#search-btn").on("click", function() {
+      $.get("/api/tables/", function(data) {
+        $("#stats").append(innerHTML("<h2>Current Reservations:</h2><br><br>"));
+        for (var i = 0; i < newGuests.length; i++) {
+                if (newGuests[i] < 5) {
+                    $("#stats").innerHTML("<h3><strong>").append(text(JSON.stringify(data.tableNumber[i])));
+                    $("#stats").innerHTML("<h3>").append(text(JSON.stringify(data.name[i])));
+                    $("#stats").innerHTML("<h3>").append(text(JSON.stringify(data.phone[i])));
+                    $("#stats").innerHTML("<h3>").append(text(JSON.stringify(data.email[i])));
+                    $("#stats").innerHTML("<h3><br>").append(text(JSON.stringify(data.userID[i])));
+               
+                } else {
+                $("#stats").append(innerHTML("<h2>Current Wait List:</h2><br><br>"));
+                $("#stats").innerHTML("<h3><strong>").append(text(JSON.stringify(data.tableNumber[i])));
+                    $("#stats").innerHTML("<h3>").append(text(JSON.stringify(data.name[i])));
+                    $("#stats").innerHTML("<h3>").append(text(JSON.stringify(data.phone[i])));
+                    $("#stats").innerHTML("<h3>").append(text(JSON.stringify(data.email[i])));
+                    $("#stats").innerHTML("<h3><br>").append(text(JSON.stringify(data.userID[i])));
+                }
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
+
 </body>
 </html>
